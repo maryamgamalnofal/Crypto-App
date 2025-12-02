@@ -100,7 +100,7 @@ def show_vigenere_page():
     <div class="float-circle"></div>
     """, unsafe_allow_html=True)
 
-    st.markdown('<h1 style="color:#a8c0ff; font-weight:700; margin-bottom:25px;">Vigenère Cipher</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 style="color:#a8c0ff; font-weight:700; margin-bottom:25px;">Vigenère Cipher Encryption / Decryption</h1>', unsafe_allow_html=True)
 
     # ---------- Input fields ----------
     txt = st.text_input("Text", key="vig_text", 

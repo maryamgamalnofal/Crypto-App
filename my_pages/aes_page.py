@@ -1,3 +1,4 @@
+# my_pages/aes_page.py
 import streamlit as st
 from Crypto.Cipher import AES
 import base64
@@ -64,7 +65,7 @@ def show_aes_page():
     }
     .aes-card:hover {transform: translateY(-8px); box-shadow: 0 14px 32px rgba(0,0,0,0.35);}
     .aes-title {color: #a8c0ff; font-size: 24px; font-weight: 700; margin-bottom: 15px;}
-    .aes-output1 {
+    .aes-output {
         background: rgba(255,255,255,0.05);
         padding: 12px; border-radius: 15px;
         font-family: monospace; color: #fff;
@@ -116,7 +117,6 @@ def show_aes_page():
     # ---------- Input fields ----------
     txt = st.text_input("Text", key="aes_text")
     key = st.text_input("Key (16 chars)", key="aes_key")
-<<<<<<< HEAD
 
     # ---------- Buttons ----------
     col1, col2 = st.columns(2)
@@ -134,25 +134,3 @@ def show_aes_page():
                 st.markdown(f'<div class="aes-output">{dec_text}</div>', unsafe_allow_html=True)
             except Exception as e:
                 st.error(f"Error: {str(e)}")
-=======
-
-    # ---------- Buttons ----------
-    col1, col2 = st.columns(2)
-    with col1:
-        if st.button("Encrypt", key="aes_enc_btn", help="Click to encrypt text"):
-            try:
-                enc_text = aes_encrypt(txt, key)
-                st.markdown(f'<div class="aes-output1">{enc_text}</div>', unsafe_allow_html=True)
-            except Exception as e:
-                st.error(f"Error: {str(e)}")
-    with col2:
-        if st.button("Decrypt", key="aes_dec_btn", help="Click to decrypt text"):
-            try:
-                dec_text = aes_decrypt(txt, key)
-                st.markdown(f'<div class="aes-output1">{dec_text}</div>', unsafe_allow_html=True)
-            except Exception as e:
-                st.error(f"Error: {str(e)}")
-
-
-
->>>>>>> f50c5dcf541335b0287e446f11cae537f07f6a6e
