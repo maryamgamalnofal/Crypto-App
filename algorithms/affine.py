@@ -34,7 +34,7 @@ def encrypt_affine(plaintext, a, b):
             y = (a * x + b) % M
             ciphertext += chr(y + ord('A'))
         else:
-            # الاحتفاظ بالرموز الأخرى كما هي
+            # الاحتفاظ بجميع الرموز الأخرى كما هي (مثل الحروف العربية، الأرقام، والمسافات)
             ciphertext += char
     return ciphertext
 
@@ -55,6 +55,7 @@ def decrypt_affine(ciphertext, a, b):
             x = (a_inverse * (y - b)) % M
             plaintext += chr(x + ord('A'))
         else:
+            # الاحتفاظ بجميع الرموز الأخرى كما هي (مثل الحروف العربية، الأرقام، والمسافات)
             plaintext += char
     return plaintext
 
@@ -83,7 +84,7 @@ else:
 
 
 # --- منطقة إدخال النص (English Label) ---
-input_text = st.text_area("Enter Text Here:", "The Affine Cipher is a type of monoalphabetic substitution cipher.", height=150)
+input_text = st.text_area("Enter Text Here:", "The Affine Cipher is a type of monoalphabetic substitution cipher. النص العربي والأرقام 12345 يتم حفظها.", height=150)
 
 # --- الأزرار والنتائج (English Labels and Messages) ---
 col1, col2 = st.columns(2)
